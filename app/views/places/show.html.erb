@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-4">
     <h3><%= @place.name %></h3>
+    <div class="average"></div><br>
     <p><strong>Address: </strong><%= @place.address %></p>
     <p><strong>Phone: </strong><%= @place.phone %></p>
     <p><strong>Website: </strong><%= @place.website %></p>
@@ -48,6 +49,15 @@
       readOnly: true
     });
   <% end %>
+
+// shows average score under name
+  $(".average").raty({
+      starOn: "<%= image_path('star-on.png') %>",
+      starOff: "<%= image_path('star-off.png') %>",
+      score: <%= @place.total_average_rating %>,
+      readOnly: true
+    });
+
 </script>
   
 

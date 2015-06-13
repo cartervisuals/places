@@ -13,4 +13,9 @@ class Place < ActiveRecord::Base
   validates_presence_of :user_id
 
 
+  def average_rating
+    self.reviews.sum(:score) / reviews.size
+  rescue ZeroDivisionError
+    0
+  end
 end
