@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @place = @review.place
   end
 
   def create

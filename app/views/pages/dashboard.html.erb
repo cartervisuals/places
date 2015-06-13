@@ -21,7 +21,7 @@
 
         <% @places.each do |place| %>
         <tr>
-          <td><%= place.name %></td>
+          <td><%= link_to place.name, place_path(place) %></td>
           <td><%= time_ago_in_words(place.created_at) %> ago</td>
           <td><%= link_to "Edit", edit_place_path(place) %> |
               <%= link_to "Delete", place_path(place), method: :delete %></td>
@@ -51,7 +51,7 @@
 
         <% @reviews.each do |review| %>
         <tr>
-          <td><%= review.place.name %></td>
+          <td><%= link_to review.place.name, place_path(review.place) %></td>
           <td><%= time_ago_in_words(review.created_at) %> ago</td>
           <td><div class="score_<%= review.id %>"</div></td>
           <td><%= link_to "Edit", edit_review_path(review) %> |
