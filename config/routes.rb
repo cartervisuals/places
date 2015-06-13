@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :places
   resources :reviews
 
+  get 'dashboard', to: 'pages#dashboard'
+
 
   devise_for :users, controllers: { registrations: "registrations"}
 
