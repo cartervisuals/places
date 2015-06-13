@@ -21,11 +21,16 @@
   </div>
   <% end %>
 
-<div class="container">
+<% if current_page?(root_path) %>
+  <div class="landing_page">
+<% else %>
+  <div class="container">
+<% end %>
 
   <%= yield %>
 
 </div>
+
 
 </body>
 </html>
