@@ -12,6 +12,8 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     @place = Place.find(params[:id])
+    @review = Review.new
+    @reviews = @place.reviews
   end
 
   # GET /places/new

@@ -9,6 +9,12 @@
 
   <div class="col-md-8">
     <h3>Reviews</h3>
+    <% if current_user %>
+    <h5>New Review</h5>
+      <%= render "reviews/form" %>
+    <% end %>
+    <h3>All Reviews</h3>
+    <%= render @reviews %>
   </div>
 
 
